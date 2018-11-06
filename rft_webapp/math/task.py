@@ -5,6 +5,7 @@ from rft_webapp.math.enums import Type, Operator
 
 list = [Operator.PLUS, Operator.MINUS, Operator.DIVISION, Operator.MULTIPLICATION]
 
+
 class Task:
     level = None
 
@@ -19,51 +20,51 @@ class Task:
 
 
 def easy():
-
-    firstnumb = randrange(0, 101)
+    first_numb = randrange(0, 101)
     operator = random.choice(list)
-    secondnumb = randrange(0, 101, firstnumb)
+    second_numb = randrange(0, 101, first_numb)
 
     if operator == Operator.PLUS:
-        x = firstnumb + secondnumb
+        x = first_numb + second_numb
     elif operator == Operator.MINUS:
-        x = firstnumb - secondnumb
+        x = first_numb - second_numb
     elif operator == Operator.MULTIPLICATION:
-        x = firstnumb * secondnumb
+        x = first_numb * second_numb
     else:
-        x = firstnumb / secondnumb
+        x = first_numb / second_numb
 
-    return (firstnumb, operator, secondnumb, x)
+    return (first_numb, operator, second_numb, x)
+
 
 def intermediate():
-    firstnumb = randrange(0, 1001)
+    first_numb = randrange(0, 1001)
     operator = random.choice(list)
-    secondnumb = randrange(0, 1001, firstnumb)
+    second_numb = randrange(0, 1001, first_numb)
 
     if operator == Operator.PLUS:
-        x = firstnumb + secondnumb
+        x = first_numb + second_numb
     elif operator == Operator.MINUS:
-        x = firstnumb - secondnumb
+        x = first_numb - second_numb
     elif operator == Operator.MULTIPLICATION:
-        x = firstnumb * secondnumb
+        x = first_numb * second_numb
     else:
-        x = firstnumb / secondnumb
+        x = first_numb / second_numb
 
-    return (firstnumb, operator, secondnumb, x)
+    return (first_numb, operator, second_numb, x )
 
 
 def advanced():
-    firstnumb = randrange(0, 10001)
+    first_numb = randrange(0, 10001)
     operator = random.choice(list)
-    secondnumb = randrange(0, 10001, firstnumb)
+    second_numb = randrange(0, 10001, first_numb)
 
     if operator == Operator.PLUS:
-        x = firstnumb + secondnumb
+        x = first_numb + second_numb
     elif operator == Operator.MINUS:
-        x = firstnumb - secondnumb
+        x = first_numb - second_numb
     elif operator == Operator.MULTIPLICATION:
-        x = firstnumb * secondnumb
+        x = first_numb * second_numb
     else:
-        x = firstnumb / secondnumb
+        x = first_numb / second_numb
 
-    return (firstnumb, operator, secondnumb, x)
+    return (first_numb, operator, second_numb, x)
