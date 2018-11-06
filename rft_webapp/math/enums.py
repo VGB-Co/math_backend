@@ -6,6 +6,7 @@ class Type(Enum):
     INTERMEDIATE = 1
     ADVANCED = 3
 
+
 class Operator(Enum):
     PLUS = '+'
     MINUS = '-'
