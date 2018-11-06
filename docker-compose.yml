@@ -9,6 +9,7 @@ services:
     - "8000:8000"
     depends_on:
     - "db"
+    - "migration"
     command: ["./wait-for-it.sh", "db:5432", "--", "python", "manage.py", "runserver", "0.0.0.0:8000"]
 
   db:
@@ -25,3 +26,13 @@ services:
     restart: always
     ports:
     - 8080:8080
+
+  migration:
+    build: .
+    volumes:
+    - .:/code
+    links:
+    - db
+    depends_on:
+    - db
+    command: ["./wait-for-it.sh", "db:5432", "--", "python", "manage.py", "migrate"]
