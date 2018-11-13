@@ -5,8 +5,7 @@ from django.db import models
 
 
 class User(models.Model):
-    user_id = models.CharField(max_length=28)
-    user_name = models.CharField(max_length=10)
+    user_id = models.CharField(max_length=10, primary_key=True, null=False, unique=True)
 
 
 class Results(models.Model):
