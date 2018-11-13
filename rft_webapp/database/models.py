@@ -1,16 +1,15 @@
-import datetime
-
 from django.db import models
-from rft_webapp.math.enums import Type
+
 
 # Create your models here.
 
 
 class User(models.Model):
     user_id = models.CharField(max_length=28)
+    user_name = models.CharField(max_length=10)
 
 
 class Results(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     type = models.IntegerField()
-    time = models.DurationField()
-    user = models.ForeignKey(User, on_delete = models.CASCADE)
+    time = models.FloatField()
