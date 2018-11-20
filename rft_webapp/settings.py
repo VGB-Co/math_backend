@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'rft_webapp.database'
+    'rft_webapp.database',
+    'rft_webapp.API'
 ]
 
 MIDDLEWARE = [
