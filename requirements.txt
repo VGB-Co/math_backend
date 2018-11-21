@@ -2,6 +2,6 @@ Django==2.1.2
 djangorestframework
 psycopg2-binary
 firebase_admin==2.13.0
-pyjwt
 cryptography
-jwt
+PyJWT
+requests
