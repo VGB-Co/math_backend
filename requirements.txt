@@ -3,4 +3,4 @@ djangorestframework
 psycopg2-binary
 firebase_admin==2.13.0
 cryptography
-PyJWT
+pyjwt
