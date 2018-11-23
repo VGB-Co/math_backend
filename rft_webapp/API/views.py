@@ -20,4 +20,4 @@ def taskreq(request):
 def encode(h, p):
     header = base64UrlEncode(JSON.stringify(h));
     payload = base64UrlEncode(JSON.stringify(p));
-    return 'header.payload'
+    return header + '.' + payload
