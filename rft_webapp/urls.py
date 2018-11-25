@@ -23,9 +23,9 @@ from rft_webapp.API import views
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.
 urlpatterns = [
-    path('tasks/', views.taskreq),
-    path('', views.index),
-    path('accounts/', include('django.contrib.auth.urls')),
+    path('api/login', views.login),
+    path('api/sampleapi', views.sample_api),
+    path('api/accounts', include('django.contrib.auth.urls')),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]
 
