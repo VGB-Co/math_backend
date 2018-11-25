@@ -6,6 +6,7 @@ from rest_framework.response import Response
 import jwt
 from datetime import datetime, timedelta
 
+# Constants variables.
 JWT_SECRET = 'secret'
 JWT_ALGORITHM = 'HS256'
 JWT_EXP_DELTA_SECONDS = 20
@@ -17,7 +18,13 @@ def taskreq(request):
     encoded_user = jwt.encode({'user_id': "abcd"}, 'SECRET', algorithm='HS256')
     return Response(encoded_user)
 
+# Encoding function.
 def encode(h, p):
     header = base64UrlEncode(JSON.stringify(h));
     payload = base64UrlEncode(JSON.stringify(p));
     return header + '.' + payload
+
+# URLs test.
+@api_view(['GET'])
+def cica(request):
+    return Response("cica")

@@ -24,6 +24,7 @@ from rft_webapp.API import views
 # Additionally, we include login URLs for the browsable API.
 urlpatterns = [
     path('tasks/', views.taskreq),
+    path('login/', views.cica),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]
 
