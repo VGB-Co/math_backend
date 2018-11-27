@@ -9,7 +9,10 @@ from rest_framework.status import (
     HTTP_200_OK
 )
 
+from django.http import JsonResponse
 from rest_framework.response import Response
+from rft_webapp.API.serializers import TaskSerializer
+from rft_webapp.mathematic.models import Task
 
 # Constants variables.
 JWT_SECRET = 'secret'
@@ -40,3 +43,17 @@ def login(request):
 def sample_api(request):
     data = {'sample_data': 123}
     return Response(data, status=HTTP_200_OK)
+
+@api_view(["GET"])
+def taskList(request):
+    difficulty = request.data.get("difficulty")
+    tasks = Task.objects.all()
+    if difficulty == 0:
+        pass
+    elif difficulty == 1:
+        pass
+    elif difficulty == 2:
+        pass
+    
+    serializer = TaskSerializer(tasks, many=True)
+    return JsonResponse(serializer.data, status=HTTP_200_OK, safe=False)

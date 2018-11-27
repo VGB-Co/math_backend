@@ -28,7 +28,7 @@ SECRET_KEY = '3+ys3v3id4g1&&$4)#+9fai1cik^x1$(fb$+5qj32$0!lou5y@'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', '[::1]', '0.0.0.0']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rft_webapp.database',
-    'rft_webapp.API'
+    'rft_webapp.API',
+    'rft_webapp.mathematic'
 ]
 
 MIDDLEWARE = [
