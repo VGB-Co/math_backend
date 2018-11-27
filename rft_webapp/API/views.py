@@ -57,3 +57,4 @@ def taskList(request):
     
     serializer = TaskSerializer(tasks, many=True)
     return JsonResponse(serializer.data, status=HTTP_200_OK, safe=False)
+    
