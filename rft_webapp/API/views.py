@@ -40,3 +40,16 @@ def login(request):
 def sample_api(request):
     data = {'sample_data': 123}
     return Response(data, status=HTTP_200_OK)
+
+@api_view(["GET"])
+def taskList(request):
+    difficulty = request.data.get("difficulty")
+    tasks
+    if difficulty == 0:
+        pass
+    elif difficulty == 1:
+        pass
+    elif difficulty == 2:
+        pass
+    
+     return Response(tasks, status=HTTP_200_OK)
