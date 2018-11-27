@@ -28,6 +28,8 @@ SECRET_KEY = '3+ys3v3id4g1&&$4)#+9fai1cik^x1$(fb$+5qj32$0!lou5y@'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+CORS_ORIGIN_ALLOW_ALL = True
+
 ALLOWED_HOSTS = ['*']
 
 
@@ -43,7 +45,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rft_webapp.database',
     'rft_webapp.API',
-    'rft_webapp.mathematic'
+    'rft_webapp.mathematic',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -54,6 +57,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'rft_webapp.urls'
