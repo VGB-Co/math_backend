@@ -1,6 +1,9 @@
 # Firebase auth keys
 rft-vgb-ec34f-firebase-adminsdk*
 
+# AutoPull script
+autoPull.py
+
 # Created by https://www.gitignore.io/api/linux,macos,python,django,pycharm,windows
 
 ### Django ###
