@@ -47,7 +47,11 @@ def sample_api(request):
 @api_view(["GET"])
 def taskList(request):
     difficulty = request.data.get("difficulty")
+<<<<<<< HEAD
     tasks = Task.objects.all()
+=======
+    tasks
+>>>>>>> 4c69584028852cf21e3ec05d1d3afa832090d8eb
     if difficulty == 0:
         pass
     elif difficulty == 1:
@@ -55,5 +59,9 @@ def taskList(request):
     elif difficulty == 2:
         pass
     
+<<<<<<< HEAD
     serializer = TaskSerializer(tasks, many=True)
     return JsonResponse(serializer.data, status=HTTP_200_OK, safe=False)
+=======
+     return Response(tasks, status=HTTP_200_OK)
+>>>>>>> 4c69584028852cf21e3ec05d1d3afa832090d8eb
