@@ -48,14 +48,14 @@ def sample_api(request):
 
 @api_view(["GET"])
 def taskList(request):
-    difficulty = 0
+    difficulty = request.GET.get('difficulty')
     tasks = Task.objects.all()
     if difficulty == 0:
         generator.Generator.generatings(10, enums.Type.EASY)
     elif difficulty == 1:
-        pass
+        generator.Generator.generatings(10, enums.Type.INTERMEDIATE)
     elif difficulty == 2:
-        pass
+        generator.Generator.generatings(10, enums.Type.ADVANCED)
     
     serializer = TaskSerializer(tasks, many=True)
     return JsonResponse(serializer.data, status=HTTP_200_OK, safe=False)

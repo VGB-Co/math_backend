@@ -1,6 +1,7 @@
 from rft_webapp.mathematic import enums
-from random import randrange
 import random
+
+list = [enums.Operator.PLUS, enums.Operator.MINUS, enums.Operator.DIVISION, enums.Operator.MULTIPLICATION]
 
 class Generating():
 
@@ -15,119 +16,59 @@ class Generating():
 
 
     def easy(self):
-        first_numb = randrange(0, 101)
+        first_numb = random.randrange(0, 101)
         operator = random.choice(list)
-        second_numb = randrange(0, 101, first_numb)
+        second_numb = random.randrange(1, 101, first_numb)
 
-        if operator == Operator.PLUS:
+        if operator == enums.Operator.PLUS:
             x = first_numb + second_numb
-        elif operator == Operator.MINUS:
+        elif operator == enums.Operator.MINUS:
             x = first_numb - second_numb
-        elif operator == Operator.MULTIPLICATION:
+        elif operator == enums.Operator.MULTIPLICATION:
             x = first_numb * second_numb
         else:
             x = first_numb / second_numb
 
-        question = first_numb + operator + second_numb
+        question = "{} {} {}=".format(first_numb, operator.value, second_numb)
         correct_answer = x
 
         return (question, correct_answer)
 
 
     def intermediate(self):
-        first_numb = randrange(0, 1001)
+        first_numb = random.randrange(0, 1001)
         operator = random.choice(list)
-        second_numb = randrange(0, 1001, first_numb)
+        second_numb = random.randrange(1, 1001, first_numb)
 
-        if operator == Operator.PLUS:
+        if operator == enums.Operator.PLUS:
             x = first_numb + second_numb
-        elif operator == Operator.MINUS:
+        elif operator == enums.Operator.MINUS:
             x = first_numb - second_numb
-        elif operator == Operator.MULTIPLICATION:
+        elif operator == enums.Operator.MULTIPLICATION:
             x = first_numb * second_numb
         else:
             x = first_numb / second_numb
 
-        question = first_numb + operator + second_numb
+        question = "{} {} {}=".format(first_numb, operator.value, second_numb)
         correct_answer = x
 
         return (question, correct_answer)
-
 
     def advanced(self):
-        first_numb = randrange(0, 10001)
+        first_numb = random.randrange(0, 10001)
         operator = random.choice(list)
-        second_numb = randrange(0, 10001, first_numb)
+        second_numb = random.randrange(1, 10001, first_numb)
 
-        if operator == Operator.PLUS:
+        if operator == enums.Operator.PLUS:
             x = first_numb + second_numb
-        elif operator == Operator.MINUS:
+        elif operator == enums.Operator.MINUS:
             x = first_numb - second_numb
-            x = first_numb - second_numb
-        elif operator == Operator.MULTIPLICATION:
+        elif operator == enums.Operator.MULTIPLICATION:
             x = first_numb * second_numb
         else:
             x = first_numb / second_numb
 
-        question = first_numb + operator + second_numb
-        correct_answer = x
-
-        return (question, correct_answer) # def easy(self):
-        first_numb = randrange(0, 101)
-        operator = random.choice(list)
-        second_numb = randrange(0, 101, first_numb)
-
-        if operator == Operator.PLUS:
-            x = first_numb + second_numb
-        elif operator == Operator.MINUS:
-            x = first_numb - second_numb
-        elif operator == Operator.MULTIPLICATION:
-            x = first_numb * second_numb
-        else:
-            x = first_numb / second_numb
-
-        question = first_numb + operator + second_numb
-        correct_answer = x
-
-        return (question, correct_answer)
-
-
-    def intermediate(self):
-        first_numb = randrange(0, 1001)
-        operator = random.choice(list)
-        second_numb = randrange(0, 1001, first_numb)
-
-        if operator == Operator.PLUS:
-            x = first_numb + second_numb
-        elif operator == Operator.MINUS:
-            x = first_numb - second_numb
-        elif operator == Operator.MULTIPLICATION:
-            x = first_numb * second_numb
-        else:
-            x = first_numb / second_numb
-
-        question = first_numb + operator + second_numb
-        correct_answer = x
-
-        return (question, correct_answer)
-
-
-    def advanced(self):
-        first_numb = randrange(0, 10001)
-        operator = random.choice(list)
-        second_numb = randrange(0, 10001, first_numb)
-
-        if operator == Operator.PLUS:
-            x = first_numb + second_numb
-        elif operator == Operator.MINUS:
-            x = first_numb - second_numb
-            x = first_numb - second_numb
-        elif operator == Operator.MULTIPLICATION:
-            x = first_numb * second_numb
-        else:
-            x = first_numb / second_numb
-
-        question = first_numb + operator + second_numb
+        question = "{} {} {}=".format(first_numb, operator.value, second_numb)
         correct_answer = x
 
         return (question, correct_answer)
