@@ -13,6 +13,8 @@ from django.http import JsonResponse
 from rest_framework.response import Response
 from rft_webapp.API.serializers import TaskSerializer
 from rft_webapp.mathematic.models import Task
+from rft_webapp.mathematic import generator
+from rft_webapp.mathematic import enums
 
 # Constants variables.
 JWT_SECRET = 'secret'
@@ -46,10 +48,10 @@ def sample_api(request):
 
 @api_view(["GET"])
 def taskList(request):
-    difficulty = request.data.get("difficulty")
+    difficulty = 0
     tasks = Task.objects.all()
     if difficulty == 0:
-        pass
+        generator.Generator.generatings(10, enums.Type.EASY)
     elif difficulty == 1:
         pass
     elif difficulty == 2:
