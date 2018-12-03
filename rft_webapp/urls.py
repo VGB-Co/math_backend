@@ -26,7 +26,7 @@ urlpatterns = [
     path('api/login', views.login),
     path('api/sampleapi', views.sample_api),
     path('api/accounts', include('django.contrib.auth.urls')),
-    path(r'^api/tasks/$', views.taskList),
+    path('api/tasks', views.taskList),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]
 
