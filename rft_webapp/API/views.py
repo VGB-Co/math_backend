@@ -2,8 +2,8 @@ from django.contrib.auth import authenticate
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.models import User
 from rest_framework.authtoken.models import Token
-from rest_framework.decorators import api_view, permission_classes
-from rest_framework.permissions import AllowAny, IsAuthenticated
+from rest_framework.decorators import api_view, permission_classes, authentication_classes
+from rest_framework.permissions import AllowAny, IsAuthenticated,IsAuthenticatedOrReadOnly
 from rest_framework.status import (
     HTTP_400_BAD_REQUEST,
     HTTP_404_NOT_FOUND,
@@ -68,7 +68,7 @@ def sample_api(request):
 
 @csrf_exempt
 @api_view(["GET"])
-@permission_classes((IsAuthenticated, ))
+@permission_classes((IsAuthenticated,))
 def taskList(request):
     difficulty = request.GET.get('difficulty', None)
     if not difficulty is None:
