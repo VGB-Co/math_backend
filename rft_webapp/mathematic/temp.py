@@ -18,7 +18,7 @@ class Generating():
     def easy(self):
         first_numb = random.randrange(1, 101)
         operator = random.choice(list)
-        second_numb = random.randrange(1, 101, first_numb - 1)
+        second_numb = random.randrange(1, 101, first_numb-1)
 
         if operator == enums.Operator.PLUS:
             x = first_numb + second_numb
@@ -38,7 +38,7 @@ class Generating():
     def intermediate(self):
         first_numb = random.randrange(1, 1001)
         operator = random.choice(list)
-        second_numb = random.randrange(1, 1001, first_numb - 1)
+        second_numb = random.randrange(1, 1001, first_numb-1)
 
         if operator == enums.Operator.PLUS:
             x = first_numb + second_numb
@@ -57,7 +57,7 @@ class Generating():
     def advanced(self):
         first_numb = random.randrange(1, 10001)
         operator = random.choice(list)
-        second_numb = random.randrange(1, 10001, first_numb - 1)
+        second_numb = random.randrange(1, 10001, first_numb-1)
 
         if operator == enums.Operator.PLUS:
             x = first_numb + second_numb
