@@ -1,6 +1,7 @@
 from django.contrib.auth import authenticate
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.models import User
+from rft_webapp.queries import query
 from rest_framework.authtoken.models import Token
 from rest_framework.decorators import api_view, permission_classes, authentication_classes
 from rest_framework.permissions import AllowAny, IsAuthenticated,IsAuthenticatedOrReadOnly
@@ -86,3 +87,14 @@ def taskList(request):
 
         serializer = TaskSerializer(tasks, many=True)
         return JsonResponse(serializer.data, status=HTTP_200_OK, safe=False)
+
+@csrf_exempt
+@api_view(["POST"])
+@permission_classes((IsAuthenticated,))
+def result(request):
+    correct_answer = request.POST.get("correct_answer", "")
+    time = request.POST.get("time", "")
+    difficulty = request.GET.get("difficulty", "")
+    user = request.user
+    query.insertresults(user.id, difficulty, time, correct_answer)
+    return Response("OK", status=HTTP_200_OK)

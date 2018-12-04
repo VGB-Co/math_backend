@@ -1,21 +1,17 @@
 from rft_webapp.database.models import Results
 
 
-def insertresults(par_userid, par_type, par_time):
-    result = Results(user_id=par_userid, type=par_type, time=par_time)
+def insertresults(par_userid, par_type, par_time, par_score):
+    result = Results(user=par_userid, type=par_type, time=par_time, score=par_score)
     result.save()
-
-
-def selectresultsbytype(par_type):
-    Results.objects.all().filter(type=par_type)
 
 
 def selectallresults():
     Results.objects.all()
 
 
-def selectownresults(par_userid, par_type):
+def toplist(par_type):
     if par_type is None:
-        Results.objects.all().filter(user_id=par_userid)
+        Results.objects.all().order_by('time')
     else:
-        Results.objects.all().filter(user_id=par_userid, type=par_type)
+        Results.objects.all().filter(type=par_type).order_by('time')
