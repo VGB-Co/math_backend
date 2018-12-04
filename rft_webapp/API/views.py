@@ -58,7 +58,7 @@ def taskList(request):
     elif difficulty == 2:
         generator.Generator.generatings(10, enums.Type.ADVANCED)
 
-    tasks = Task.objects.all()
+    tasks = Task.objects.all()[:10]
     
     serializer = TaskSerializer(tasks, many=True)
     return JsonResponse(serializer.data, status=HTTP_200_OK, safe=False)
