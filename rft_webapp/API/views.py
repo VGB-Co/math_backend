@@ -13,8 +13,9 @@ from rest_framework.status import (
 
 from django.http import JsonResponse
 from rest_framework.response import Response
-from rft_webapp.API.serializers import TaskSerializer
+from rft_webapp.API.serializers import TaskSerializer, TopListSerializer
 from rft_webapp.mathematic.models import Task
+from rft_webapp.database.models import Results
 from rft_webapp.mathematic import generator
 from rft_webapp.mathematic import enums
 
@@ -98,3 +99,14 @@ def result(request):
     user = request.user
     query.insertresults(user.id, difficulty, time, correct_answer)
     return Response("OK", status=HTTP_200_OK)
+
+
+@csrf_exempt
+@api_view(["GET"])
+@permission_classes((IsAuthenticated,))
+def toplists(request):
+    difficulty = request.GET.get("difficulty", "")
+    difficulty = int(difficulty)
+    top = Results.objects.all().filter(type=difficulty).order_by('time')
+    serializer = TopListSerializer(top, many=True)
+    return JsonResponse(serializer.data, safe=False, status=HTTP_200_OK)

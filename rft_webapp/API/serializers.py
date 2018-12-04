@@ -6,3 +6,10 @@ class TaskSerializer(serializers.Serializer):
 
     correct_answer = serializers.IntegerField()
     question = serializers.CharField()
+
+class TopListSerializer(serializers.Serializer):
+
+    user = serializers.IntegerField()
+    type = serializers.IntegerField()
+    score = serializers.IntegerField()
+    time = serializers.FloatField()

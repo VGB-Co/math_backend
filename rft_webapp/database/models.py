@@ -7,6 +7,9 @@ from django.contrib.auth.models import User
 
 class Results(models.Model):
     user = models.IntegerField()
-    type = models.IntegerField(default=None)
-    score = models.IntegerField(default=None)
-    time = models.FloatField(default=None) 
+    type = models.IntegerField()
+    score = models.IntegerField()
+    time = models.FloatField()
+
+    class Meta:
+        managed = True

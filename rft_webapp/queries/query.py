@@ -12,6 +12,6 @@ def selectallresults():
 
 def toplist(par_type):
     if par_type is None:
-        Results.objects.all().order_by('time')
+        return Results.objects.all().order_by('time')
     else:
-        Results.objects.all().filter(type=par_type).order_by('time')
+        return Results.objects.all().filter(type=par_type).order_by('time')
