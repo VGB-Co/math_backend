@@ -27,6 +27,7 @@ urlpatterns = [
     path('api/register', views.register),
     path('api/sampleapi', views.sample_api),
     path('api/accounts', include('django.contrib.auth.urls')),
+    # path('api/decocde', views.tokenDecode),
     path('api/tasks', views.taskList),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]

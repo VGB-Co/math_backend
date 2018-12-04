@@ -39,7 +39,7 @@ def login(request):
         return Response({'error': 'Invalid Credentials'},
                         status=HTTP_404_NOT_FOUND)
     token, _ = Token.objects.get_or_create(user=user)
-    return Response({'token': token.key},
+    return Response({'token': token.key, 'name': user.username, 'email': user.email},
                     status=HTTP_200_OK)
 
 
@@ -55,7 +55,7 @@ def register(request):
                         status=HTTP_400_BAD_REQUEST)
     user = User.objects.create_user(username=username, email=email, password=password)
     token, _ = Token.objects.get_or_create(user=user)
-    return Response({'token': token.key},
+    return Response({'token': token.key, 'name': user.username, 'email': user.email},
                     status=HTTP_200_OK)
 
 
@@ -65,6 +65,7 @@ def register(request):
 def sample_api(request):
     data = {'sample_data': 123}
     return Response(data, status=HTTP_200_OK)
+
 
 @csrf_exempt
 @api_view(["GET"])
