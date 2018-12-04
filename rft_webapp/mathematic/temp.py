@@ -16,7 +16,7 @@ class Generating():
 
 
     def easy(self):
-        first_numb = random.randrange(0, 101)
+        first_numb = random.randrange(1, 101)
         operator = random.choice(list)
         second_numb = random.randrange(1, 101, first_numb)
 
@@ -36,7 +36,7 @@ class Generating():
 
 
     def intermediate(self):
-        first_numb = random.randrange(0, 1001)
+        first_numb = random.randrange(1, 1001)
         operator = random.choice(list)
         second_numb = random.randrange(1, 1001, first_numb)
 
@@ -55,7 +55,7 @@ class Generating():
         return (question, correct_answer)
 
     def advanced(self):
-        first_numb = random.randrange(0, 10001)
+        first_numb = random.randrange(1, 10001)
         operator = random.choice(list)
         second_numb = random.randrange(1, 10001, first_numb)
 
