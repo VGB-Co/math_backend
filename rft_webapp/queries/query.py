@@ -1,9 +1,4 @@
-from rft_webapp.database.models import User, Results
-
-
-def insertuser(par_userid):
-    user = User(user_id=par_userid)
-    user.save()
+from rft_webapp.database.models import Results
 
 
 def insertresults(par_userid, par_type, par_time):
