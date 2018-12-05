@@ -97,7 +97,7 @@ def result(request):
     time = request.POST.get("time", "")
     difficulty = request.GET.get("difficulty", "")
     user = request.user
-    query.insertresults(user.id, difficulty, time, correct_answer)
+    query.insertresults(user, difficulty, time, correct_answer)
     return Response("OK", status=HTTP_200_OK)
 
 
