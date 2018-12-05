@@ -4,7 +4,7 @@ jobs:
     docker:
       - image: debian:stretch
     steps:
-      - checkout
+      - checkout  
       - run:
           name: Greeting
           command: echo Hello, world.
@@ -15,5 +15,5 @@ jobs:
           fingerprints:
             - "45:76:c5:72:66:1e:68:dc:f7:eb:cd:5a:42:e8:7f:d6"
       - run:
-        name: Deploy
-        command: ssh ec2-user@ec2-3-16-89-127.us-east-2.compute.amazonaws.com 'cd /home/ec2-user/math_backend && git pull origin master'
+          name: Deploy
+          command: ssh ec2-user@ec2-3-16-89-127.us-east-2.compute.amazonaws.com 'cd /home/ec2-user/math_backend && git pull origin master'
