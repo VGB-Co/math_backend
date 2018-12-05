@@ -8,11 +8,8 @@ jobs:
           fingerprints:
             - "45:76:c5:72:66:1e:68:dc:f7:eb:cd:5a:42:e8:7f:d6"
       - run:
-          name: add sudo
-          command: apt-get install -y sudo
-      - run:
           name: add ssh
-          command: sudo apt-get install -y ssh
+          command: apt-get install -y ssh
       - run:
           name: Deploy
           command: |
