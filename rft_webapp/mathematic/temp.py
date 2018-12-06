@@ -36,9 +36,9 @@ class Generating():
         else:
             first_numb = random.randrange(1, 21)
             while True:
+                second_numb = random.randrange(1, 21)
                 if first_numb == 1:
                     break
-                second_numb = random.randrange(1, 21)
                 print("second number = {}".format(second_numb))
                 if first_numb != second_numb and first_numb % second_numb == 0:
                     break
@@ -71,9 +71,9 @@ class Generating():
         else:
             first_numb = random.randrange(1, 31)
             while True:
+                second_numb = random.randrange(1, 31)
                 if first_numb == 1:
                     break
-                second_numb = random.randrange(1, 31)
                 print("second number = {}".format(second_numb))
                 if first_numb != second_numb and first_numb % second_numb == 0:
                     break
@@ -105,9 +105,9 @@ class Generating():
         else:
             first_numb = random.randrange(1, 41)
             while True:
+                second_numb = random.randrange(1, 41)
                 if first_numb == 1:
                     break
-                second_numb = random.randrange(1, 41)
                 print("second number = {}".format(second_numb))
                 if first_numb != second_numb and first_numb % second_numb == 0:
                     break;
