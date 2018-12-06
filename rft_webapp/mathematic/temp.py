@@ -40,8 +40,8 @@ class Generating():
                     break
                 second_numb = random.randrange(1, 21)
                 print("second number = {}".format(second_numb))
-                if and first_numb != second_numb and first_numb % second_numb == 0:
-                    break;
+                if first_numb != second_numb and first_numb % second_numb == 0:
+                    break
             x = first_numb / second_numb
 
         question = "{} {} {}=".format(first_numb, operator.value, second_numb)
@@ -76,7 +76,7 @@ class Generating():
                 second_numb = random.randrange(1, 31)
                 print("second number = {}".format(second_numb))
                 if first_numb != second_numb and first_numb % second_numb == 0:
-                    break;
+                    break
             x = first_numb / second_numb
 
         question = "{} {} {}=".format(first_numb, operator.value, second_numb)
