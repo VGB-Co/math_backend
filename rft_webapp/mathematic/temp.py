@@ -20,10 +20,14 @@ class Generating():
         operator = random.choice(list)
 
         if operator == enums.Operator.PLUS:
-            second_numb = random.randrange(1, 51)
-            x = first_numb + second_numb
+                second_numb = random.randrange(1, 51)
+                if first_numb == second_numb:
+                    second_numb = random.randrange(1, 51)
+                x = first_numb + second_numb
         elif operator == enums.Operator.MINUS:
             second_numb = random.randrange(1, 51)
+            if first_numb == second_numb:
+                second_numb = random.randrange(1, 51)
             x = first_numb - second_numb
         elif operator == enums.Operator.MULTIPLICATION:
             first_numb = random.randrange(1, 21)
@@ -33,7 +37,7 @@ class Generating():
             first_numb = random.randrange(1, 21)
             while True:
                 second_numb = random.randrange(1, 21)
-                if first_numb % second_numb == 0:
+                if first_numb % second_numb == 0 and first_numb != second_numb:
                     break;
             x = first_numb / second_numb
 
@@ -49,9 +53,13 @@ class Generating():
 
         if operator == enums.Operator.PLUS:
             second_numb = random.randrange(1, 101)
+            if first_numb == second_numb:
+                second_numb = random.randrange(1, 101)
             x = first_numb + second_numb
         elif operator == enums.Operator.MINUS:
             second_numb = random.randrange(1, 101)
+            if first_numb == second_numb:
+                second_numb = random.randrange(1, 101)
             x = first_numb - second_numb
         elif operator == enums.Operator.MULTIPLICATION:
             first_numb = random.randrange(1, 31)
@@ -61,7 +69,7 @@ class Generating():
             first_numb = random.randrange(1, 31)
             while True:
                 second_numb = random.randrange(1, 31)
-                if first_numb % second_numb == 0:
+                if first_numb % second_numb == 0 and first_numb != second_numb:
                     break;
             x = first_numb / second_numb
 
@@ -76,9 +84,13 @@ class Generating():
 
         if operator == enums.Operator.PLUS:
             second_numb = random.randrange(1, 151)
+            if first_numb == second_numb:
+                second_numb = random.randrange(1, 151)
             x = first_numb + second_numb
         elif operator == enums.Operator.MINUS:
             second_numb = random.randrange(1, 151)
+            if first_numb == second_numb:
+                second_numb = random.randrange(1, 151)
             x = first_numb - second_numb
         elif operator == enums.Operator.MULTIPLICATION:
             first_numb = random.randrange(1, 41)
@@ -88,7 +100,7 @@ class Generating():
             first_numb = random.randrange(1, 41)
             while True:
                 second_numb = random.randrange(1, 41)
-                if first_numb % second_numb == 0:
+                if first_numb % second_numb == 0 and first_numb != second_numb:
                     break;
             x = first_numb / second_numb
 
