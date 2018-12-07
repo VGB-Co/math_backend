@@ -115,4 +115,4 @@ def toplists(request):
     difficulty = int(difficulty)
     top = Results.objects.all().filter(type=difficulty).order_by('time')
     serializer = TopListSerializer(top, many=True)
-    return JsonResponse(serializer.data, safe=False, status=HTTP_200_OK)
+    return JsonResponse({"users": serializer.data}, safe=False, status=HTTP_200_OK)
