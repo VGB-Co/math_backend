@@ -34,7 +34,7 @@ class Generating():
             second_numb = random.randrange(1, 21)
             x = first_numb * second_numb
         else:
-            first_numb = random.randrange(1, 21)
+            first_numb = random.randrange(2, 21)
             while True:
                 second_numb = random.randrange(1, 21)
                 if first_numb % second_numb == 0 and first_numb != second_numb:
@@ -66,7 +66,7 @@ class Generating():
             second_numb = random.randrange(1, 31)
             x = first_numb * second_numb
         else:
-            first_numb = random.randrange(1, 31)
+            first_numb = random.randrange(2, 31)
             while True:
                 second_numb = random.randrange(1, 31)
                 if first_numb % second_numb == 0 and first_numb != second_numb:
@@ -97,7 +97,7 @@ class Generating():
             second_numb = random.randrange(1, 41)
             x = first_numb * second_numb
         else:
-            first_numb = random.randrange(1, 41)
+            first_numb = random.randrange(2, 41)
             while True:
                 second_numb = random.randrange(1, 41)
                 if first_numb % second_numb == 0 and first_numb != second_numb:
