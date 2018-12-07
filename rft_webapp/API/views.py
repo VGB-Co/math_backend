@@ -93,12 +93,18 @@ def taskList(request):
 @api_view(["POST"])
 @permission_classes((IsAuthenticated,))
 def result(request):
-    correct_answer = request.POST.get("correct_answer", "")
-    time = request.POST.get("time", "")
-    difficulty = request.GET.get("difficulty", "")
+    print(request.POST)
+    correct_answer = request.data.get("correct_answer", 0)
+    print("0️⃣ correct =  {correct}".format(correct=correct_answer))
+    time = request.data.get("time", 0)
+    print("1️⃣ time =  {time}".format(time=time))
+    difficulty = request.GET.get("difficulty", 0)
     user = request.user
-    query.insertresults(user, difficulty, time, correct_answer)
-    return Response("OK", status=HTTP_200_OK)
+    if float(time) > 0:
+        query.insertresults(user, difficulty, time, correct_answer)
+        return Response("OK", status=HTTP_200_OK)
+    else:
+        return Response("error: wrong time", status=HTTP_400_BAD_REQUEST)
 
 
 @csrf_exempt
