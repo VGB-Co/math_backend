@@ -8,7 +8,11 @@ before_install:
   - ssh-agent $eval
 
 install:
+  - eval `ssh-agent -s`
   - bash deploy.sh
+
+after_install:
+  - ssh-agent -k
 
 notifications:
   email:
