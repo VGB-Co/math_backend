@@ -28,8 +28,6 @@ SECRET_KEY = '3+ys3v3id4g1&&$4)#+9fai1cik^x1$(fb$+5qj32$0!lou5y@'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-CORS_ORIGIN_ALLOW_ALL = True
-
 ALLOWED_HOSTS = ['*']
 
 
@@ -68,6 +66,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'rft_webapp.urls'
+CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOW_CREDENTIALS = True
 
 TEMPLATES = [
     {
