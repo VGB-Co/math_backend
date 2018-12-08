@@ -29,10 +29,8 @@ JWT_EXP_DELTA_SECONDS = 20
 @api_view(["POST"])
 @permission_classes((AllowAny,))
 def login(request):
-    username = request.GET.get("username", "")
-    print(username)
-    password = request.GET.get("password", "")
-    print(password)
+    username = request.data.get("username", "")
+    password = request.data.get("password", "")
     if username is None or password is None:
         return Response({'error': 'Please provide both username and password'},
                         status=HTTP_400_BAD_REQUEST)
@@ -49,9 +47,10 @@ def login(request):
 @api_view(["POST"])
 @permission_classes((AllowAny,))
 def register(request):
-    username = request.GET.get("username", "")
-    password = request.GET.get("password", "")
-    email = request.GET.get("email", "")
+    username = request.data.get("username", "")
+    password = request.data.get("password", "")
+    email = request.data.get("email", "")
+    
     if username is None or password is None or email is None:
         return Response({'error': 'Please provide both username and password'},
                         status=HTTP_400_BAD_REQUEST)
@@ -93,11 +92,8 @@ def taskList(request):
 @api_view(["POST"])
 @permission_classes((IsAuthenticated,))
 def result(request):
-    print(request.POST)
     correct_answer = request.data.get("correct_answer", 0)
-    print("0️⃣ correct =  {correct}".format(correct=correct_answer))
     time = request.data.get("time", 0)
-    print("1️⃣ time =  {time}".format(time=time))
     difficulty = request.GET.get("difficulty", 0)
     user = request.user
     if float(time) > 0:
