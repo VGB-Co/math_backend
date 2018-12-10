@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'rft_webapp.API',
     'rft_webapp.mathematic',
     'corsheaders',
+    'sslserver',
 ]
 
 REST_FRAMEWORK = {
@@ -69,6 +70,7 @@ ROOT_URLCONF = 'rft_webapp.urls'
 
 CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOW_CREDENTIALS = True
+SECURE_SSL_REDIRECT = True
 
 CORS_ALLOW_METHODS = (
     'DELETE',

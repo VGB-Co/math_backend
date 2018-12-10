@@ -5,3 +5,5 @@ firebase_admin==2.13.0
 cryptography
 pyjwt
 django-cors-headers
+django-sslserver
+djangosecure
