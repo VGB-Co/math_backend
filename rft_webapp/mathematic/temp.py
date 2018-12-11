@@ -28,7 +28,11 @@ class Generating():
             second_numb = random.randrange(1, 51)
             if first_numb == second_numb:
                 second_numb = random.randrange(1, 51)
-            x = first_numb - second_numb
+            if second_numb > first_numb:
+                first_numb, second_numb = second_numb, first_numb
+                x = first_numb - second_numb
+            else:
+                x = first_numb - second_numb
         elif operator == enums.Operator.MULTIPLICATION:
             first_numb = random.randrange(1, 21)
             second_numb = random.randrange(1, 21)
@@ -63,7 +67,11 @@ class Generating():
             second_numb = random.randrange(1, 101)
             if first_numb == second_numb:
                 second_numb = random.randrange(1, 101)
-            x = first_numb - second_numb
+            if second_numb > first_numb:
+                first_numb, second_numb = second_numb, first_numb
+                x = first_numb - second_numb
+            else:
+                x = first_numb - second_numb
         elif operator == enums.Operator.MULTIPLICATION:
             first_numb = random.randrange(1, 31)
             second_numb = random.randrange(1, 31)
@@ -97,7 +105,11 @@ class Generating():
             second_numb = random.randrange(1, 151)
             if first_numb == second_numb:
                 second_numb = random.randrange(1, 151)
-            x = first_numb - second_numb
+            if second_numb > first_numb:
+                first_numb, second_numb = second_numb, first_numb
+                x = first_numb - second_numb
+            else:
+                x = first_numb - second_numb
         elif operator == enums.Operator.MULTIPLICATION:
             first_numb = random.randrange(1, 41)
             second_numb = random.randrange(1, 41)
