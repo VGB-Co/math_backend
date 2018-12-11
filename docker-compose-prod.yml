@@ -10,7 +10,7 @@ services:
     depends_on:
     - "db"
     - "migration"
-    command: ["./wait-for-it.sh", "db:5432", "--", "python", "manage.py", "runserver", "0.0.0.0:8000"]
+    command: ["./wait-for-it.sh", "db:5432", "--", "python", "manage.py", "runsslserver", "0.0.0.0:8000", "--certificate", "./domain.cert", "--key", "./private.key"]
 
   db:
     image: postgres
