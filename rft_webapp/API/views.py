@@ -1,6 +1,7 @@
 from django.contrib.auth import authenticate
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.models import User
+from django.db.models import Max
 from rft_webapp.queries import query
 from rest_framework.authtoken.models import Token
 from rest_framework.decorators import api_view, permission_classes, authentication_classes
@@ -96,9 +97,12 @@ def result(request):
     time = request.data.get("time", 0)
     difficulty = request.GET.get("difficulty", 0)
     user = request.user
+
+    score = (correct_answer / time) * 100
+
     if float(time) > 0:
-        query.insertresults(user, difficulty, time, correct_answer)
-        return Response("OK", status=HTTP_200_OK)
+        query.insertresults(user, difficulty, time, score)
+        return JsonResponse({"score":score}, status=HTTP_200_OK)
     else:
         return Response("error: wrong time", status=HTTP_400_BAD_REQUEST)
 
@@ -109,6 +113,8 @@ def result(request):
 def toplists(request):
     difficulty = request.GET.get("difficulty", "")
     difficulty = int(difficulty)
-    top = Results.objects.all().filter(type=difficulty).order_by('time')[:10]
+    top = Results.objects.all().filter(type=difficulty).values('name').distinct().annotate(score=Max('score')).order_by('-score')[:10]
+    print(top.query)
+    print(top)
     serializer = TopListSerializer(top, many=True)
     return JsonResponse({"users": serializer.data}, safe=False, status=HTTP_200_OK)

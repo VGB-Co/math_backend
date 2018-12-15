@@ -10,6 +10,6 @@ class TaskSerializer(serializers.Serializer):
 class TopListSerializer(serializers.Serializer):
 
     name = serializers.CharField()
-    type = serializers.IntegerField()
+    # type = serializers.IntegerField()
     score = serializers.IntegerField()
-    time = serializers.FloatField()
+    # time = serializers.FloatField()
