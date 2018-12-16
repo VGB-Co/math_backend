@@ -99,6 +99,7 @@ def result(request):
     user = request.user
 
     score = (correct_answer / time) * 100
+    score = int(score)
 
     if float(time) > 0:
         query.insertresults(user, difficulty, time, score)
