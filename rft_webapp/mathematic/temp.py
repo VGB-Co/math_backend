@@ -61,11 +61,11 @@ class Generating():
         op3 = random.choice(ops)
         op4 = random.choice(ops)
 
-        n1 = random.randrange(2,20)
-        n2 = random.randrange(2,20)
-        n3 = random.randrange(2,20)
-        n4 = random.randrange(2,20)
-        n5 = random.randrange(2,20)
+        n1 = random.randrange(1,11)
+        n2 = random.randrange(1,11)
+        n3 = random.randrange(1,11)
+        n4 = random.randrange(1,11)
+        n5 = random.randrange(1,11)
 
 
         question = "({n1} {op1} {n2}) {op2} ({n3} {op3} {n4})".format(n1=n1, n2=n2, n3=n3, n4=n4, op1=op1, op2=op2, op3=op3)
