@@ -78,13 +78,11 @@ def taskList(request):
         difficulty = int(difficulty)
         print(difficulty)
         if difficulty == 0:
-            generator.Generator.generatings(50, enums.Type.EASY)
+            generator.Generator.generatings(10, enums.Type.EASY)
         elif difficulty == 1:
-            generator.Generator.generatings(50, enums.Type.INTERMEDIATE)
-        elif difficulty == 2:
-            generator.Generator.generatings(50, enums.Type.ADVANCED)
+            generator.Generator.generatings(10, enums.Type.INTERMEDIATE)
 
-        tasks = Task.objects.all().order_by('-id')[:10]
+        tasks = Task.objects.filter(difficulty=difficulty).order_by('?')[:10]
 
         serializer = TaskSerializer(tasks, many=True)
         return JsonResponse(serializer.data, status=HTTP_200_OK, safe=False)

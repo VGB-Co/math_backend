@@ -55,40 +55,22 @@ class Generating():
 
 
     def intermediate(self):
-        first_numb = random.randrange(1, 101)
-        operator = random.choice(list)
+        ops = ['+', '-', '*']
+        op1 = random.choice(ops)
+        op2 = random.choice(ops)
+        op3 = random.choice(ops)
+        op4 = random.choice(ops)
 
-        if operator == enums.Operator.PLUS:
-            second_numb = random.randrange(1, 101)
-            if first_numb == second_numb:
-                second_numb = random.randrange(1, 101)
-            x = first_numb + second_numb
-        elif operator == enums.Operator.MINUS:
-            second_numb = random.randrange(1, 101)
-            if first_numb == second_numb:
-                second_numb = random.randrange(1, 101)
-            if second_numb > first_numb:
-                first_numb, second_numb = second_numb, first_numb
-                x = first_numb - second_numb
-            else:
-                x = first_numb - second_numb
-        elif operator == enums.Operator.MULTIPLICATION:
-            first_numb = random.randrange(1, 31)
-            second_numb = random.randrange(1, 31)
-            x = first_numb * second_numb
-        else:
-            first_numb = random.randrange(2, 31)
-            while True:
-                second_numb = random.randrange(1, 31)
-                if first_numb == 1:
-                    break
-                print("second number = {}".format(second_numb))
-                if first_numb != second_numb and first_numb % second_numb == 0:
-                    break
-            x = first_numb / second_numb
+        n1 = random.randrange(2,20)
+        n2 = random.randrange(2,20)
+        n3 = random.randrange(2,20)
+        n4 = random.randrange(2,20)
+        n5 = random.randrange(2,20)
 
-        question = "{} {} {}=".format(first_numb, operator.value, second_numb)
-        correct_answer = x
+
+        question = "({n1} {op1} {n2}) {op2} ({n3} {op3} {n4})".format(n1=n1, n2=n2, n3=n3, n4=n4, op1=op1, op2=op2, op3=op3)
+        correct_answer = eval(question)
+        question += " = "
 
         return (question, correct_answer)
 

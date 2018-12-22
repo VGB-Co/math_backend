@@ -7,9 +7,10 @@ class Generator():
 
 
     def generatings(cica, lvl):
-        for i in range(cica):
+        for _ in range(cica):
             tmp = temp.Generating(lvl)
             task = models.Task()
             task.question = tmp.question
             task.correct_answer = tmp.correct_answer
+            task.difficulty = lvl
             task.save()

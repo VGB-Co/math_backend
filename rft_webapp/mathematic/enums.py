@@ -1,7 +1,7 @@
-from enum import Enum
+from enum import IntEnum, Enum
 
 
-class Type(Enum):
+class Type(IntEnum):
     EASY = 0
     INTERMEDIATE = 1
     ADVANCED = 2

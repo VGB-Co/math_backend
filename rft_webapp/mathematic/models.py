@@ -9,6 +9,7 @@ class Task(models.Model):
     
     correct_answer = models.IntegerField()
     question = models.TextField()
+    difficulty = models.IntegerField()
 
     class Meta:
         managed = True
